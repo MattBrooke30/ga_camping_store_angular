@@ -1,0 +1,37 @@
+<div class="row main">
+
+  <div class="text-center">
+    <h4>Search: <input type="text" ng-model="ctrl.searchText"></h4>
+  </div>
+  <br>
+
+  <table class="table col-md-12">
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th>Price</th>
+      <th>Add</th>
+    </tr>
+    <tr class="animate-inventory" ng-repeat="item in ctrl.inventory | inventory : ctrl.searchText | orderBy: ['category', 'price']">
+      <td>{{item.category}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.rating}} / 5</td>
+      <td>{{item.price | currency}}</td>
+      <td><button class="btn btn-sm btn-primary" ng-click="ctrl.addItem(item)">Add to Cart</button></td>
+    </tr>
+  </table>
+
+  <h2>Your Cart:</h2>
+  <ul>
+    <li class="cart animate-cart" ng-repeat="item in ctrl.cart">
+      <span>{{ item.qty + ' x ' + item.description + ' = ' + (ctrl.getCost(item) | currency) }}</span>
+      <button class="btn btn-danger btn-xs" ng-click="ctrl.removeItem(item)">Remove Item</button>
+    </li>
+  </ul>
+  <h3>Total: {{ ctrl.getTotal() | currency }}</h3>
+  <br>
+  <button class="btn btn-danger" ng-click="ctrl.clearCart()">Clear Cart</button>
+</div>

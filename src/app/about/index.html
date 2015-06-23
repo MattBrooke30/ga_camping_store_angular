@@ -1,18 +1,18 @@
 <div class="container">
 
   <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
+    <br>
     <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+      <img src="assets/images/logos/yeoman.png" alt="I'm Yeoman"><br>
       Always a pleasure scaffolding your apps.
     </p>
-    <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
   </div>
+  <br>
 
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in about.awesomeThings | orderBy:'rank'">
+    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in ctrl.awesomeThings | orderBy:'rank'">
       <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
+        <img class="pull-right" ng-src="assets/images/logos/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
         <div class="caption">
           <h3>{{awesomeThing.title}}</h3>
           <p>{{awesomeThing.description}}</p>
@@ -22,10 +22,8 @@
     </div>
   </div>
 
-  <hr>
-
   <div class="footer">
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
+    <p>With ♥ from <a href="https://twitter.com/drmikeh">@drmikeh</a></p>
   </div>
 
 </div>
