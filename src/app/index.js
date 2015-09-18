@@ -26,7 +26,7 @@ angular.module('gaCampingStore',
         controller: 'AboutCtrl as ctrl'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/items');
   })
   .run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
